@@ -19,6 +19,7 @@
 		9A14D32D243EE8AD00982486 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D327243EE8AD00982486 /* HomeViewController.swift */; };
 		9A14D32E243EE8AD00982486 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D328243EE8AD00982486 /* HomeInteractor.swift */; };
 		9A14D333243EF1F400982486 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D332243EF1F400982486 /* ResponseError.swift */; };
+		9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D336243F76BC00982486 /* HearthstoneAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		9A14D327243EE8AD00982486 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9A14D328243EE8AD00982486 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		9A14D332243EF1F400982486 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
+		9A14D336243F76BC00982486 /* HearthstoneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthstoneAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				9A14D332243EF1F400982486 /* ResponseError.swift */,
+				9A14D336243F76BC00982486 /* HearthstoneAPI.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				9A14D311243EE5E300982486 /* SceneDelegate.swift in Sources */,
 				9A14D32A243EE8AD00982486 /* HomeWorker.swift in Sources */,
 				9A14D32E243EE8AD00982486 /* HomeInteractor.swift in Sources */,
+				9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */,
 				9A14D333243EF1F400982486 /* ResponseError.swift in Sources */,
 				9A14D329243EE8AD00982486 /* HomePresenter.swift in Sources */,
 				9A14D32C243EE8AD00982486 /* HomeModels.swift in Sources */,
