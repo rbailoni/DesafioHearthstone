@@ -12,5 +12,14 @@
 
 import UIKit
 
+fileprivate struct Constants {
+    static let pathCardsURL = "cards/"
+    
+    private init() {}
+}
+
 class CardsWorker {
+    func fetchCardsDeck(session: String, name: String, completion: @escaping (Result<[CardsResponse], ResponseError>) -> Void) {
+        HearthstoneAPI.shared.fetchResourceArray(path: Constants.pathCardsURL + "\(session.lowercased())/\(name)", completion: completion)
+    }
 }
