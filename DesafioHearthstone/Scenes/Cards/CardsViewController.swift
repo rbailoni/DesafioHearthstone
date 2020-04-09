@@ -54,6 +54,10 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
         return UIActivityIndicatorView(style: .whiteLarge)
     }()
     
+    private lazy var refreshControl: UIRefreshControl = {
+        return UIRefreshControl()
+    }()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -99,12 +103,14 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
         pathCards = viewModel.pathCards
         titleDeck.text = viewModel.deckSelected
         spinner.stopAnimating()
+        refreshControl.endRefreshing()
         collectionView.reloadData()
     }
     
     func displayError(error: ResponseError) {
         self.showError(error: error)
         spinner.stopAnimating()
+        refreshControl.endRefreshing()
     }
 
 }
@@ -164,12 +170,14 @@ extension CardsViewController: ViewCodeProtocol {
         spinner.color = .preto
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
+        refreshControl.addTarget(self, action: #selector(fetchCardsDeck), for: .valueChanged)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(CardCell.self, forCellWithReuseIdentifier: Constants.registerCell)
         collectionView.dataSource = self
+        collectionView.refreshControl = refreshControl
     }
     
     @objc func didTouchBackButton() {
