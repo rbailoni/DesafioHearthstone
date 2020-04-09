@@ -27,6 +27,7 @@
 		9A14D344243F990400982486 /* NSLayoutConstraint+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D343243F990400982486 /* NSLayoutConstraint+.swift */; };
 		9A14D346243F9CF400982486 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D345243F9CF400982486 /* UIViewController+.swift */; };
 		9A14D34B243FA01D00982486 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D34A243FA01D00982486 /* UIView+.swift */; };
+		9A14D34E243FABB500982486 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D34D243FABB500982486 /* Deck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		9A14D343243F990400982486 /* NSLayoutConstraint+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+.swift"; sourceTree = "<group>"; };
 		9A14D345243F9CF400982486 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		9A14D34A243FA01D00982486 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		9A14D34D243FABB500982486 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		9A14D30D243EE5E300982486 /* DesafioHearthstone */ = {
 			isa = PBXGroup;
 			children = (
+				9A14D34C243FAB7700982486 /* View */,
 				9A14D340243F979A00982486 /* Protocol */,
 				9A14D33B243F95CB00982486 /* Extension */,
 				9A14D338243F90CD00982486 /* Response */,
@@ -147,6 +150,14 @@
 				9A14D341243F97E800982486 /* ViewCodeProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		9A14D34C243FAB7700982486 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A14D34D243FABB500982486 /* Deck.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 				9A14D32A243EE8AD00982486 /* HomeWorker.swift in Sources */,
 				9A14D32E243EE8AD00982486 /* HomeInteractor.swift in Sources */,
 				9A14D342243F97E800982486 /* ViewCodeProtocol.swift in Sources */,
+				9A14D34E243FABB500982486 /* Deck.swift in Sources */,
 				9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */,
 				9A14D33A243F90FD00982486 /* InfoResponse.swift in Sources */,
 				9A14D333243EF1F400982486 /* ResponseError.swift in Sources */,
