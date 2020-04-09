@@ -23,6 +23,7 @@
 		9A14D33A243F90FD00982486 /* InfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D339243F90FD00982486 /* InfoResponse.swift */; };
 		9A14D33D243F95E600982486 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D33C243F95E600982486 /* UIColor+.swift */; };
 		9A14D33F243F967400982486 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D33E243F967400982486 /* UIFont+.swift */; };
+		9A14D342243F97E800982486 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D341243F97E800982486 /* ViewCodeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		9A14D339243F90FD00982486 /* InfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoResponse.swift; sourceTree = "<group>"; };
 		9A14D33C243F95E600982486 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		9A14D33E243F967400982486 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		9A14D341243F97E800982486 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		9A14D30D243EE5E300982486 /* DesafioHearthstone */ = {
 			isa = PBXGroup;
 			children = (
+				9A14D340243F979A00982486 /* Protocol */,
 				9A14D33B243F95CB00982486 /* Extension */,
 				9A14D338243F90CD00982486 /* Response */,
 				9A14D32F243EF18B00982486 /* Util */,
@@ -127,6 +130,14 @@
 				9A14D33E243F967400982486 /* UIFont+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9A14D340243F979A00982486 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9A14D341243F97E800982486 /* ViewCodeProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 				9A14D311243EE5E300982486 /* SceneDelegate.swift in Sources */,
 				9A14D32A243EE8AD00982486 /* HomeWorker.swift in Sources */,
 				9A14D32E243EE8AD00982486 /* HomeInteractor.swift in Sources */,
+				9A14D342243F97E800982486 /* ViewCodeProtocol.swift in Sources */,
 				9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */,
 				9A14D33A243F90FD00982486 /* InfoResponse.swift in Sources */,
 				9A14D333243EF1F400982486 /* ResponseError.swift in Sources */,
