@@ -24,6 +24,7 @@ fileprivate struct Constants {
 
 protocol HomePresentationLogic {
     func presentDeckSessions(response: Home.DeckSessions.Response)
+    func presentCards()
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -56,5 +57,9 @@ class HomePresenter: HomePresentationLogic {
         }
         
         return nil
+    }
+    
+    func presentCards() {
+        self.viewController?.displayCards()
     }
 }
