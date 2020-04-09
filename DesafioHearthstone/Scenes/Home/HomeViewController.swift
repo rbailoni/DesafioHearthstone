@@ -32,8 +32,8 @@ protocol HomeDisplayLogic: class {
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
-    var interactor: HomeBusinessLogic?
-    var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+    private var interactor: HomeBusinessLogic?
+    private var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     
     private lazy var titleHome: UILabel = {
         return UILabel()
@@ -60,9 +60,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setup() {
@@ -105,6 +104,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             let deckSession = DeckSession()
             deckSession.title = key
             deckSession.titleDecks = value
+            deckSession.delegate = self
             deckSessions.append(deckSession)
             contentView.addSubview(deckSession)
         }
@@ -209,5 +209,11 @@ extension HomeViewController: ViewCodeProtocol {
         spinner.hidesWhenStopped = true
         spinner.color = .preto
         spinner.startAnimating()
+    }
+}
+
+extension HomeViewController: DeckSessionDelegate {
+    func didSelectDeck(session: String, name: String) {
+        interactor?.setSelectedDeck(session: session, name: name)
     }
 }

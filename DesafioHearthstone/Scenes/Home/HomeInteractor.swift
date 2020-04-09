@@ -24,7 +24,7 @@ protocol HomeDataStore {
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
-    var worker: HomeWorker?
+    private var worker: HomeWorker?
     var nameSelected: String?
     var sessionSelected: String?
 
