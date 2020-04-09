@@ -164,9 +164,22 @@ extension CardsViewController: ViewCodeProtocol {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(CardCell.self, forCellWithReuseIdentifier: Constants.registerCell)
+        collectionView.dataSource = self
     }
     
     @objc func didTouchBackButton() {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CardsViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return pathCards.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.registerCell, for: indexPath) as! CardCell
+        cell.card.imagePath = pathCards[indexPath.row]
+        return cell
     }
 }
