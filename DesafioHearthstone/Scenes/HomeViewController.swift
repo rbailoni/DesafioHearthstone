@@ -26,6 +26,8 @@ fileprivate struct Constants {
 }
 
 protocol HomeDisplayLogic: class {
+    func displayDeckSessions(viewModel: Home.DeckSessions.ViewModel)
+    func displayError(error: ResponseError)
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
@@ -87,6 +89,45 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCodeSetup()
+    }
+    
+    func displayDeckSessions(viewModel: Home.DeckSessions.ViewModel) {
+        var deckSessions = [DeckSession]()
+        contentView.subviews.forEach { $0.removeFromSuperview() }
+        guard let sessions = viewModel.sessions else { return }
+        for (key, value) in sessions {
+            let deckSession = DeckSession()
+            deckSession.title = key
+            deckSession.titleDecks = value
+            deckSessions.append(deckSession)
+            contentView.addSubview(deckSession)
+        }
+        setConstraintDeckSessions(sessions: deckSessions)
+        spinner.stopAnimating()
+    }
+    
+    func displayError(error: ResponseError) {
+        self.showError(error: error)
+        spinner.stopAnimating()
+    }
+    
+    private func setConstraintDeckSessions(sessions: [DeckSession]) {
+        for (index, session) in sessions.enumerated() {
+            session.translatesAutoresizingMaskIntoConstraints = false
+            if session == sessions.first {
+                session.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+            } else {
+                session.topAnchor.constraint(equalTo: sessions[index - 1].bottomAnchor).isActive = true
+            }
+            
+            session.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+            session.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+            session.heightAnchor.constraint(equalToConstant: Constants.constraint160).isActive = true
+            
+            if session == sessions.last {
+                session.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+            }
+        }
     }
 }
 
