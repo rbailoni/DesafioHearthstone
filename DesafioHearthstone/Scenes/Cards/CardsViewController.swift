@@ -25,11 +25,14 @@ fileprivate struct Constants {
 }
 
 protocol CardsDisplayLogic: class {
+    func displayError(error: ResponseError)
+    func displayCardsDeck(viewModel: Cards.CardsDeck.ViewModel)
 }
 
 class CardsViewController: UIViewController, CardsDisplayLogic {
     var interactor: CardsBusinessLogic?
     var router: (NSObjectProtocol & CardsRoutingLogic & CardsDataPassing)?
+    var pathCards: [String] = []
     
     private lazy var backButton: UIButton = {
         return UIButton(type: .custom)
@@ -86,6 +89,19 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
         super.viewDidLoad()
         viewCodeSetup()
     }
+    
+    func displayCardsDeck(viewModel: Cards.CardsDeck.ViewModel) {
+        pathCards = viewModel.pathCards
+        titleDeck.text = viewModel.deckSelected
+        spinner.stopAnimating()
+        collectionView.reloadData()
+    }
+    
+    func displayError(error: ResponseError) {
+        self.showError(error: error)
+        spinner.stopAnimating()
+    }
+
 }
 
 extension CardsViewController: ViewCodeProtocol {
