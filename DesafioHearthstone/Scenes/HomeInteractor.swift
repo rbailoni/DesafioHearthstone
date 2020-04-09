@@ -13,6 +13,7 @@
 import UIKit
 
 protocol HomeBusinessLogic {
+    func fetchDeckSessions()
 }
 
 protocol HomeDataStore {
@@ -21,4 +22,12 @@ protocol HomeDataStore {
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
+    
+    func fetchDeckSessions() {
+        worker = HomeWorker()
+        worker?.fetchDeckSessions(completion: { result in
+            let response = Home.DeckSessions.Response(result: result)
+            self.presenter?.presentDeckSessions(response: response)
+        })
+    }
 }
