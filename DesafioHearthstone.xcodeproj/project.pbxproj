@@ -22,6 +22,7 @@
 		9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D336243F76BC00982486 /* HearthstoneAPI.swift */; };
 		9A14D33A243F90FD00982486 /* InfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D339243F90FD00982486 /* InfoResponse.swift */; };
 		9A14D33D243F95E600982486 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D33C243F95E600982486 /* UIColor+.swift */; };
+		9A14D33F243F967400982486 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D33E243F967400982486 /* UIFont+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		9A14D336243F76BC00982486 /* HearthstoneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthstoneAPI.swift; sourceTree = "<group>"; };
 		9A14D339243F90FD00982486 /* InfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoResponse.swift; sourceTree = "<group>"; };
 		9A14D33C243F95E600982486 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		9A14D33E243F967400982486 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				9A14D33C243F95E600982486 /* UIColor+.swift */,
+				9A14D33E243F967400982486 /* UIFont+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */,
 				9A14D33A243F90FD00982486 /* InfoResponse.swift in Sources */,
 				9A14D333243EF1F400982486 /* ResponseError.swift in Sources */,
+				9A14D33F243F967400982486 /* UIFont+.swift in Sources */,
 				9A14D33D243F95E600982486 /* UIColor+.swift in Sources */,
 				9A14D329243EE8AD00982486 /* HomePresenter.swift in Sources */,
 				9A14D32C243EE8AD00982486 /* HomeModels.swift in Sources */,
