@@ -13,4 +13,15 @@
 import UIKit
 
 enum Home {
+    enum DeckSessions {
+        struct Request {
+            
+        }
+        struct Response {
+            var result: Result<InfoResponse, ResponseError>
+        }
+        struct ViewModel {
+            var sessions: Dictionary<String, [String]>?
+        }
+    }
 }
