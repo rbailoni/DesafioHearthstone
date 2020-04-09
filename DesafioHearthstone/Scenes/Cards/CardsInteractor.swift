@@ -13,6 +13,7 @@
 import UIKit
 
 protocol CardsBusinessLogic {
+    func fetchCardsDeck()
 }
 
 protocol CardsDataStore {
@@ -25,4 +26,13 @@ class CardsInteractor: CardsBusinessLogic, CardsDataStore {
     var worker: CardsWorker?
     var nameSelected: String?
     var sessionSelected: String?
+    
+    func fetchCardsDeck() {
+        guard let session = sessionSelected, let name = nameSelected else { return }
+        worker = CardsWorker()
+        worker?.fetchCardsDeck(session: session, name: name, completion: { result in
+            let response = Cards.CardsDeck.Response(result: result, deckSelected: "\(session) \n \(name)")
+            self.presenter?.presentCardsDeck(response: response)
+        })
+    }
 }
