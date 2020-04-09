@@ -13,6 +13,7 @@
 import UIKit
 
 @objc protocol HomeRoutingLogic {
+    func routeToCards(segue: UIStoryboardSegue?)
 }
 
 protocol HomeDataPassing {
@@ -22,4 +23,27 @@ protocol HomeDataPassing {
 class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     weak var viewController: HomeViewController?
     var dataStore: HomeDataStore?
+    
+    func routeToCards(segue: UIStoryboardSegue?) {
+        if let segue = segue {
+            let destinationVC = segue.destination as! CardsViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToCards(source: dataStore!, destination: &destinationDS)
+        } else {
+            let destinationVC = CardsViewController()
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToCards(source: dataStore!, destination: &destinationDS)
+            navigateToCards(source: viewController!, destination: destinationVC)
+        }
+    }
+    
+    private func navigateToCards(source: HomeViewController, destination: CardsViewController) {
+        destination.modalPresentationStyle = .fullScreen
+        source.show(destination, sender: nil)
+    }
+    
+    private func passDataToCards(source: HomeDataStore, destination: inout CardsDataStore) {
+        destination.nameSelected = source.nameSelected
+        destination.sessionSelected = source.sessionSelected
+    }
 }

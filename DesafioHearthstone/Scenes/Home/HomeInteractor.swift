@@ -17,12 +17,16 @@ protocol HomeBusinessLogic {
 }
 
 protocol HomeDataStore {
+    var sessionSelected: String? { get }
+    var nameSelected: String? { get }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
-    
+    var nameSelected: String?
+    var sessionSelected: String?
+
     func fetchDeckSessions() {
         worker = HomeWorker()
         worker?.fetchDeckSessions(completion: { result in

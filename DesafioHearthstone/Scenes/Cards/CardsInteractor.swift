@@ -17,14 +17,16 @@ protocol CardsBusinessLogic {
 }
 
 protocol CardsDataStore {
-    //var name: String { get set }
+    var sessionSelected: String? { get set }
+    var nameSelected: String? { get set }
 }
 
 class CardsInteractor: CardsBusinessLogic, CardsDataStore {
     var presenter: CardsPresentationLogic?
     var worker: CardsWorker?
-    //var name: String = ""
-    
+    var nameSelected: String?
+    var sessionSelected: String?
+
     // MARK: Do something
     
     func doSomething(request: Cards.Something.Request) {
