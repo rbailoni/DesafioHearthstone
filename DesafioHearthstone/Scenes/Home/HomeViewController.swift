@@ -28,6 +28,7 @@ fileprivate struct Constants {
 protocol HomeDisplayLogic: class {
     func displayDeckSessions(viewModel: Home.DeckSessions.ViewModel)
     func displayError(error: ResponseError)
+    func displayCards()
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
@@ -133,6 +134,10 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
                 session.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
             }
         }
+    }
+    
+    func displayCards() {
+        router?.routeToCards(segue: nil)
     }
 }
 
