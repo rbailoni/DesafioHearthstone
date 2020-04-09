@@ -55,6 +55,10 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         return UIActivityIndicatorView(style: .whiteLarge)
     }()
     
+    private lazy var refreshControl: UIRefreshControl = {
+        return UIRefreshControl()
+    }()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
@@ -109,11 +113,13 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             contentView.addSubview(deckSession)
         }
         setConstraintDeckSessions(sessions: deckSessions)
+        refreshControl.endRefreshing()
         spinner.stopAnimating()
     }
     
     func displayError(error: ResponseError) {
         self.showError(error: error)
+        refreshControl.endRefreshing()
         spinner.stopAnimating()
     }
     
@@ -201,9 +207,11 @@ extension HomeViewController: ViewCodeProtocol {
         titleHome.text = Constants.titleHome
         separatorTitle.translatesAutoresizingMaskIntoConstraints = false
         separatorTitle.backgroundColor = .white
+        refreshControl.addTarget(self, action: #selector(fetchDeckSessions), for: .valueChanged)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.refreshControl = refreshControl
         contentView.translatesAutoresizingMaskIntoConstraints = false
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.hidesWhenStopped = true
