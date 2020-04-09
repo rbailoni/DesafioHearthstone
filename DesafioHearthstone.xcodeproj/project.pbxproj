@@ -26,6 +26,7 @@
 		9A14D342243F97E800982486 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D341243F97E800982486 /* ViewCodeProtocol.swift */; };
 		9A14D344243F990400982486 /* NSLayoutConstraint+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D343243F990400982486 /* NSLayoutConstraint+.swift */; };
 		9A14D346243F9CF400982486 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D345243F9CF400982486 /* UIViewController+.swift */; };
+		9A14D34B243FA01D00982486 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D34A243FA01D00982486 /* UIView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		9A14D341243F97E800982486 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		9A14D343243F990400982486 /* NSLayoutConstraint+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+.swift"; sourceTree = "<group>"; };
 		9A14D345243F9CF400982486 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		9A14D34A243FA01D00982486 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				9A14D33E243F967400982486 /* UIFont+.swift */,
 				9A14D343243F990400982486 /* NSLayoutConstraint+.swift */,
 				9A14D345243F9CF400982486 /* UIViewController+.swift */,
+				9A14D34A243FA01D00982486 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				9A14D344243F990400982486 /* NSLayoutConstraint+.swift in Sources */,
 				9A14D32D243EE8AD00982486 /* HomeViewController.swift in Sources */,
 				9A14D311243EE5E300982486 /* SceneDelegate.swift in Sources */,
+				9A14D34B243FA01D00982486 /* UIView+.swift in Sources */,
 				9A14D346243F9CF400982486 /* UIViewController+.swift in Sources */,
 				9A14D32A243EE8AD00982486 /* HomeWorker.swift in Sources */,
 				9A14D32E243EE8AD00982486 /* HomeInteractor.swift in Sources */,
