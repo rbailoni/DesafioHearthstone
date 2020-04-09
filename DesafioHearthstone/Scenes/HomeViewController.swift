@@ -12,12 +12,45 @@
 
 import UIKit
 
+fileprivate struct Constants {
+    static let constraintHalf: CGFloat = 0.5
+    static let constraint08: CGFloat = 8
+    static let constraint40: CGFloat = 40
+    static let constraint55: CGFloat = 55
+    static let constraint160: CGFloat = 160
+    static let fontSize40: CGFloat = 40
+    static let titleHome = "Hearthstone"
+    static let priority250 = UILayoutPriority(250)
+    
+    private init() {}
+}
+
 protocol HomeDisplayLogic: class {
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+    
+    private lazy var titleHome: UILabel = {
+        return UILabel()
+    }()
+    
+    private lazy var separatorTitle: UIView = {
+        return UIView()
+    }()
+    
+    private lazy var scrollView: UIScrollView = {
+        return UIScrollView()
+    }()
+
+    private lazy var contentView: UIView = {
+        return UIView()
+    }()
+    
+    private lazy var spinner: UIActivityIndicatorView = {
+        return UIActivityIndicatorView(style: .whiteLarge)
+    }()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -53,5 +86,77 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewCodeSetup()
+    }
+}
+
+extension HomeViewController: ViewCodeProtocol {
+    func viewHierarchySetup() {
+        view.addSubview(titleHome)
+        view.addSubview(separatorTitle)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(spinner)
+    }
+    
+    func viewConstraintSetup() {
+        setConstraintsTitleHome()
+        setConstraintsSeparatorTitle()
+        setConstraintsScrollView()
+        setConstraintsContentView()
+        setConstraintsSpinner()
+    }
+    
+    private func setConstraintsTitleHome() {
+        titleHome.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: Constants.constraint40).isActive = true
+        titleHome.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: Constants.constraint40).isActive = true
+        titleHome.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -Constants.constraint40).isActive = true
+        titleHome.heightAnchor.constraint(equalToConstant: Constants.constraint55).isActive = true
+    }
+    
+    private func setConstraintsSeparatorTitle() {
+        separatorTitle.topAnchor.constraint(equalTo: titleHome.bottomAnchor, constant: Constants.constraint08).isActive = true
+        separatorTitle.leadingAnchor.constraint(equalTo: titleHome.leadingAnchor).isActive = true
+        separatorTitle.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        separatorTitle.heightAnchor.constraint(equalToConstant: Constants.constraintHalf).isActive = true
+    }
+    
+    private func setConstraintsScrollView() {
+        scrollView.topAnchor.constraint(equalTo: separatorTitle.bottomAnchor, constant: Constants.constraint08).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+    }
+    
+    private func setConstraintsContentView() {
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).usePriority(Constants.priority250).isActive = true
+    }
+    
+    private func setConstraintsSpinner() {
+        spinner.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+    }
+    
+    func viewThemeSetup() {
+        view.backgroundColor = .background
+        titleHome.translatesAutoresizingMaskIntoConstraints = false
+        titleHome.font = UIFont.avenirBlack(Constants.fontSize40)
+        titleHome.textColor = .preto
+        titleHome.text = Constants.titleHome
+        separatorTitle.translatesAutoresizingMaskIntoConstraints = false
+        separatorTitle.backgroundColor = .white
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.showsVerticalScrollIndicator = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.hidesWhenStopped = true
+        spinner.color = .preto
+        spinner.startAnimating()
     }
 }
