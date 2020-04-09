@@ -89,6 +89,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCodeSetup()
+        fetchDeckSessions()
+    }
+    
+    @objc private func fetchDeckSessions() {
+        interactor?.fetchDeckSessions()
     }
     
     func displayDeckSessions(viewModel: Home.DeckSessions.ViewModel) {
