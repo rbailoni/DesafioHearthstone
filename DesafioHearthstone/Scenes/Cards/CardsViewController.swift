@@ -12,6 +12,18 @@
 
 import UIKit
 
+fileprivate struct Constants {
+    static let constraint08: CGFloat = 8
+    static let constraint24: CGFloat = 24
+    static let constraint30: CGFloat = 30
+    static let constraint40: CGFloat = 40
+    static let constraint64: CGFloat = 64
+    static let cornerRadius: CGFloat = 32
+    static let fontSize22: CGFloat = 22
+    static let numberOfLines = 0
+    static let registerCell = "CardCell"
+}
+
 protocol CardsDisplayLogic: class {
 }
 
@@ -19,16 +31,35 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
     var interactor: CardsBusinessLogic?
     var router: (NSObjectProtocol & CardsRoutingLogic & CardsDataPassing)?
     
+    private lazy var backButton: UIButton = {
+        return UIButton(type: .custom)
+    }()
+    
+    private lazy var titleDeck: UILabel = {
+        return UILabel()
+    }()
+    
+    private lazy var cardFlowLayout: CardFlowLayout = {
+        return CardFlowLayout()
+    }()
+    
+    lazy var collectionView: UICollectionView = {
+        return UICollectionView(frame: .zero, collectionViewLayout: cardFlowLayout)
+    }()
+    
+    lazy var spinner: UIActivityIndicatorView = {
+        return UIActivityIndicatorView(style: .whiteLarge)
+    }()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setup() {
         let viewController = self
         let interactor = CardsInteractor()
@@ -53,5 +84,73 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewCodeSetup()
+    }
+}
+
+extension CardsViewController: ViewCodeProtocol {
+    func viewHierarchySetup() {
+        view.addSubview(backButton)
+        view.addSubview(titleDeck)
+        view.addSubview(spinner)
+        view.addSubview(collectionView)
+    }
+    
+    func viewConstraintSetup() {
+        setConstraintsBackButton()
+        setConstraintsTitleDeck()
+        setConstraintsSpinner()
+        setConstraintCollectionView()
+    }
+    
+    private func setConstraintsBackButton() {
+        backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Constants.constraint40).isActive = true
+        backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Constants.constraint24).isActive = true
+        backButton.widthAnchor.constraint(equalToConstant: Constants.constraint64).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: Constants.constraint64).isActive = true
+    }
+    
+    private func setConstraintsTitleDeck() {
+        titleDeck.centerYAnchor.constraint(equalTo: backButton.centerYAnchor).isActive = true
+        titleDeck.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Constants.constraint30).isActive = true
+    }
+    
+    private func setConstraintsSpinner() {
+        spinner.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        spinner.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor).isActive = true
+    }
+    
+    private func setConstraintCollectionView() {
+        collectionView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: Constants.constraint08).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    func viewThemeSetup() {
+        view.backgroundColor = .background
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.backgroundColor = .preto
+        backButton.layer.cornerRadius = Constants.cornerRadius
+        backButton.setImage(#imageLiteral(resourceName: "backButton"), for: .normal)
+        backButton.addTarget(self, action: #selector(didTouchBackButton), for: .touchUpInside)
+        titleDeck.translatesAutoresizingMaskIntoConstraints = false
+        titleDeck.font = .avenirRoman(Constants.fontSize22)
+        titleDeck.textColor = .preto
+        titleDeck.numberOfLines = Constants.numberOfLines
+        titleDeck.textAlignment = .right
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.color = .preto
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.register(CardCell.self, forCellWithReuseIdentifier: Constants.registerCell)
+    }
+    
+    @objc func didTouchBackButton() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
