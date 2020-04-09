@@ -13,14 +13,11 @@
 import UIKit
 
 protocol CardsDisplayLogic: class {
-    func displaySomething(viewModel: Cards.Something.ViewModel)
 }
 
 class CardsViewController: UIViewController, CardsDisplayLogic {
     var interactor: CardsBusinessLogic?
     var router: (NSObjectProtocol & CardsRoutingLogic & CardsDataPassing)?
-    
-    // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -31,8 +28,6 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
         super.init(coder: aDecoder)
         setup()
     }
-    
-    // MARK: Setup
     
     private func setup() {
         let viewController = self
@@ -47,8 +42,6 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
         router.dataStore = interactor
     }
     
-    // MARK: Routing
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let scene = segue.identifier {
             let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
@@ -58,23 +51,7 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
         }
     }
     
-    // MARK: View lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        doSomething()
-    }
-    
-    // MARK: Do something
-    
-    //@IBOutlet weak var nameTextField: UITextField!
-    
-    func doSomething() {
-        let request = Cards.Something.Request()
-        interactor?.doSomething(request: request)
-    }
-    
-    func displaySomething(viewModel: Cards.Something.ViewModel) {
-        //nameTextField.text = viewModel.name
     }
 }

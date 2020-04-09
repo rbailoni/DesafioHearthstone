@@ -13,7 +13,6 @@
 import UIKit
 
 protocol CardsBusinessLogic {
-    func doSomething(request: Cards.Something.Request)
 }
 
 protocol CardsDataStore {
@@ -26,14 +25,4 @@ class CardsInteractor: CardsBusinessLogic, CardsDataStore {
     var worker: CardsWorker?
     var nameSelected: String?
     var sessionSelected: String?
-
-    // MARK: Do something
-    
-    func doSomething(request: Cards.Something.Request) {
-        worker = CardsWorker()
-        worker?.doSomeWork()
-        
-        let response = Cards.Something.Response()
-        presenter?.presentSomething(response: response)
-    }
 }

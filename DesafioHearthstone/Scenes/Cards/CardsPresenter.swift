@@ -13,16 +13,8 @@
 import UIKit
 
 protocol CardsPresentationLogic {
-    func presentSomething(response: Cards.Something.Response)
 }
 
 class CardsPresenter: CardsPresentationLogic {
     weak var viewController: CardsDisplayLogic?
-    
-    // MARK: Do something
-    
-    func presentSomething(response: Cards.Something.Response) {
-        let viewModel = Cards.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
-    }
 }
