@@ -88,8 +88,13 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewCodeSetup()
+        fetchCardsDeck()
     }
-    
+
+    @objc func fetchCardsDeck() {
+        interactor?.fetchCardsDeck()
+    }
+
     func displayCardsDeck(viewModel: Cards.CardsDeck.ViewModel) {
         pathCards = viewModel.pathCards
         titleDeck.text = viewModel.deckSelected
