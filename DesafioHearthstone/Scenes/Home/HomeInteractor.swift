@@ -14,6 +14,7 @@ import UIKit
 
 protocol HomeBusinessLogic {
     func fetchDeckSessions()
+    func setSelectedDeck(session: String, name: String)
 }
 
 protocol HomeDataStore {
@@ -33,5 +34,11 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             let response = Home.DeckSessions.Response(result: result)
             self.presenter?.presentDeckSessions(response: response)
         })
+    }
+    
+    func setSelectedDeck(session: String, name: String) {
+        self.sessionSelected = session
+        self.nameSelected = name
+        presenter?.presentCards()
     }
 }
