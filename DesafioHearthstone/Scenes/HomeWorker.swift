@@ -12,7 +12,14 @@
 
 import UIKit
 
+fileprivate struct Constants {
+    static var pathInfoURL = "info/"
+
+    private init() {}
+}
+
 class HomeWorker {
-    func doSomeWork() {
+    func fetchDeckSessions(completion: @escaping(Result<InfoResponse, ResponseError>) -> Void) {
+        HearthstoneAPI.shared.fetchResource(path: Constants.pathInfoURL, completion: completion)
     }
 }
