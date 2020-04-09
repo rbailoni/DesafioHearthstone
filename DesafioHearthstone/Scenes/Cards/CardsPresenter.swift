@@ -13,8 +13,26 @@
 import UIKit
 
 protocol CardsPresentationLogic {
+    func presentCardsDeck(response: Cards.CardsDeck.Response)
 }
 
 class CardsPresenter: CardsPresentationLogic {
     weak var viewController: CardsDisplayLogic?
+    
+    func presentCardsDeck(response: Cards.CardsDeck.Response) {
+        DispatchQueue.main.async {
+            switch response.result {
+            case .failure(let error):
+                self.viewController?.displayError(error: error)
+            case .success(let cards):
+                let nonOptionalCards = cards.compactMap { $0.img }
+                if nonOptionalCards.count == 0 {
+                    self.viewController?.displayError(error: .emptyCards)
+                } else {
+                    let viewModel = Cards.CardsDeck.ViewModel(pathCards: nonOptionalCards, deckSelected: response.deckSelected)
+                    self.viewController?.displayCardsDeck(viewModel: viewModel)
+                }
+            }
+        }
+    }
 }
