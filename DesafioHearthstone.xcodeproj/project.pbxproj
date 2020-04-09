@@ -37,6 +37,7 @@
 		9A14D35F243FC54C00982486 /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D359243FC54C00982486 /* CardsInteractor.swift */; };
 		9A14D361243FD38D00982486 /* CardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D360243FD38D00982486 /* CardsResponse.swift */; };
 		9AAFEE59243FDA9200F9AFCE /* CardFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFEE58243FDA9200F9AFCE /* CardFlowLayout.swift */; };
+		9AAFEE5B243FDF6F00F9AFCE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFEE5A243FDF6F00F9AFCE /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		9A14D359243FC54C00982486 /* CardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractor.swift; sourceTree = "<group>"; };
 		9A14D360243FD38D00982486 /* CardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsResponse.swift; sourceTree = "<group>"; };
 		9AAFEE58243FDA9200F9AFCE /* CardFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlowLayout.swift; sourceTree = "<group>"; };
+		9AAFEE5A243FDF6F00F9AFCE /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				9A14D34D243FABB500982486 /* Deck.swift */,
 				9A14D350243FAC4C00982486 /* DeckSession.swift */,
+				9AAFEE5A243FDF6F00F9AFCE /* Card.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				9A14D35A243FC54C00982486 /* CardsPresenter.swift in Sources */,
 				9A14D33A243F90FD00982486 /* InfoResponse.swift in Sources */,
 				9A14D333243EF1F400982486 /* ResponseError.swift in Sources */,
+				9AAFEE5B243FDF6F00F9AFCE /* Card.swift in Sources */,
 				9A14D33F243F967400982486 /* UIFont+.swift in Sources */,
 				9A14D33D243F95E600982486 /* UIColor+.swift in Sources */,
 				9A14D329243EE8AD00982486 /* HomePresenter.swift in Sources */,
