@@ -36,6 +36,7 @@
 		9A14D35E243FC54C00982486 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D358243FC54C00982486 /* CardsViewController.swift */; };
 		9A14D35F243FC54C00982486 /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D359243FC54C00982486 /* CardsInteractor.swift */; };
 		9A14D361243FD38D00982486 /* CardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D360243FD38D00982486 /* CardsResponse.swift */; };
+		9AAFEE59243FDA9200F9AFCE /* CardFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAFEE58243FDA9200F9AFCE /* CardFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		9A14D358243FC54C00982486 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		9A14D359243FC54C00982486 /* CardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractor.swift; sourceTree = "<group>"; };
 		9A14D360243FD38D00982486 /* CardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsResponse.swift; sourceTree = "<group>"; };
+		9AAFEE58243FDA9200F9AFCE /* CardFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				9A14D332243EF1F400982486 /* ResponseError.swift */,
 				9A14D336243F76BC00982486 /* HearthstoneAPI.swift */,
+				9AAFEE58243FDA9200F9AFCE /* CardFlowLayout.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				9A14D313243EE5E300982486 /* ViewController.swift in Sources */,
 				9A14D32B243EE8AD00982486 /* HomeRouter.swift in Sources */,
 				9A14D30F243EE5E300982486 /* AppDelegate.swift in Sources */,
+				9AAFEE59243FDA9200F9AFCE /* CardFlowLayout.swift in Sources */,
 				9A14D35B243FC54C00982486 /* CardsWorker.swift in Sources */,
 				9A14D35F243FC54C00982486 /* CardsInteractor.swift in Sources */,
 				9A14D344243F990400982486 /* NSLayoutConstraint+.swift in Sources */,
