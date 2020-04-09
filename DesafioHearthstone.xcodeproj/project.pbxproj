@@ -20,6 +20,7 @@
 		9A14D32E243EE8AD00982486 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D328243EE8AD00982486 /* HomeInteractor.swift */; };
 		9A14D333243EF1F400982486 /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D332243EF1F400982486 /* ResponseError.swift */; };
 		9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D336243F76BC00982486 /* HearthstoneAPI.swift */; };
+		9A14D33A243F90FD00982486 /* InfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D339243F90FD00982486 /* InfoResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		9A14D328243EE8AD00982486 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		9A14D332243EF1F400982486 /* ResponseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseError.swift; sourceTree = "<group>"; };
 		9A14D336243F76BC00982486 /* HearthstoneAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearthstoneAPI.swift; sourceTree = "<group>"; };
+		9A14D339243F90FD00982486 /* InfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		9A14D30D243EE5E300982486 /* DesafioHearthstone */ = {
 			isa = PBXGroup;
 			children = (
+				9A14D338243F90CD00982486 /* Response */,
 				9A14D32F243EF18B00982486 /* Util */,
 				9A14D322243EE88300982486 /* Scenes */,
 				9A14D30E243EE5E300982486 /* AppDelegate.swift */,
@@ -102,6 +105,14 @@
 				9A14D336243F76BC00982486 /* HearthstoneAPI.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		9A14D338243F90CD00982486 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				9A14D339243F90FD00982486 /* InfoResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				9A14D32A243EE8AD00982486 /* HomeWorker.swift in Sources */,
 				9A14D32E243EE8AD00982486 /* HomeInteractor.swift in Sources */,
 				9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */,
+				9A14D33A243F90FD00982486 /* InfoResponse.swift in Sources */,
 				9A14D333243EF1F400982486 /* ResponseError.swift in Sources */,
 				9A14D329243EE8AD00982486 /* HomePresenter.swift in Sources */,
 				9A14D32C243EE8AD00982486 /* HomeModels.swift in Sources */,
