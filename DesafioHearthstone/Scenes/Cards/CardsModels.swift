@@ -13,4 +13,16 @@
 import UIKit
 
 enum Cards {
+    enum CardsDeck {
+        struct Request {
+        }
+        struct Response {
+            var result: Result<[CardsResponse], ResponseError>
+            var deckSelected: String
+        }
+        struct ViewModel {
+            var pathCards: [String]
+            var deckSelected: String
+        }
+    }
 }
