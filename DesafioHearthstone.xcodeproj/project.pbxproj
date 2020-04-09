@@ -35,6 +35,7 @@
 		9A14D35D243FC54C00982486 /* CardsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D357243FC54C00982486 /* CardsModels.swift */; };
 		9A14D35E243FC54C00982486 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D358243FC54C00982486 /* CardsViewController.swift */; };
 		9A14D35F243FC54C00982486 /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D359243FC54C00982486 /* CardsInteractor.swift */; };
+		9A14D361243FD38D00982486 /* CardsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A14D360243FD38D00982486 /* CardsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		9A14D357243FC54C00982486 /* CardsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsModels.swift; sourceTree = "<group>"; };
 		9A14D358243FC54C00982486 /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		9A14D359243FC54C00982486 /* CardsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInteractor.swift; sourceTree = "<group>"; };
+		9A14D360243FD38D00982486 /* CardsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				9A14D339243F90FD00982486 /* InfoResponse.swift */,
+				9A14D360243FD38D00982486 /* CardsResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				9A14D32E243EE8AD00982486 /* HomeInteractor.swift in Sources */,
 				9A14D35E243FC54C00982486 /* CardsViewController.swift in Sources */,
 				9A14D35C243FC54C00982486 /* CardsRouter.swift in Sources */,
+				9A14D361243FD38D00982486 /* CardsResponse.swift in Sources */,
 				9A14D342243F97E800982486 /* ViewCodeProtocol.swift in Sources */,
 				9A14D34E243FABB500982486 /* Deck.swift in Sources */,
 				9A14D337243F76BC00982486 /* HearthstoneAPI.swift in Sources */,
