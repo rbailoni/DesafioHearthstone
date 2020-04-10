@@ -23,7 +23,7 @@ protocol CardsDataStore {
 
 class CardsInteractor: CardsBusinessLogic, CardsDataStore {
     var presenter: CardsPresentationLogic?
-    var worker: CardsWorker?
+    private var worker: CardsWorker?
     var nameSelected: String?
     var sessionSelected: String?
     

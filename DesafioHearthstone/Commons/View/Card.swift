@@ -81,12 +81,11 @@ extension Card: ViewCodeProtocol {
     func viewThemeSetup() {
         spinner.translatesAutoresizingMaskIntoConstraints = false
         spinner.color = .preto
-//        spinner.hidesWhenStopped = true
+        spinner.hidesWhenStopped = true
         spinner.startAnimating()
         contentImage.translatesAutoresizingMaskIntoConstraints = false
         contentImage.backgroundColor = .clear
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-//        imageView.isHidden = true
     }
 }

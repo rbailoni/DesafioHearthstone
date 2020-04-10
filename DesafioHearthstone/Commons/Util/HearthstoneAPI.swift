@@ -70,7 +70,7 @@ class HearthstoneAPI {
         dataTask.resume()
     }
     
-    func getRequest(url: URL) -> URLRequest {
+    private func getRequest(url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         request.addValue(Constants.rapidAPIHostValue, forHTTPHeaderField: Constants.rapidAPIHost)
         request.addValue(Constants.rapidAPIKeyValue, forHTTPHeaderField: Constants.rapidAPIKey)

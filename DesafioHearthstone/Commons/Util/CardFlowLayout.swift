@@ -12,6 +12,8 @@ fileprivate struct Constants {
     static let innerSpace: CGFloat = 5
     static let numberOfCellsOnRow: CGFloat = 2
     static let proportion: CGFloat = 1.5
+    
+    private init() {}
 }
 
 class CardFlowLayout: UICollectionViewFlowLayout {
@@ -26,7 +28,7 @@ class CardFlowLayout: UICollectionViewFlowLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func itemWidth() -> CGFloat {
+    private func itemWidth() -> CGFloat {
         return (collectionView!.frame.size.width/Constants.numberOfCellsOnRow) - Constants.innerSpace
     }
     

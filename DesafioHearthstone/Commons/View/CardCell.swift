@@ -10,6 +10,8 @@ import UIKit
 
 fileprivate struct Constants {
     static let constraint16: CGFloat = 16
+    
+    private init() {}
 }
 
 class CardCell: UICollectionViewCell {

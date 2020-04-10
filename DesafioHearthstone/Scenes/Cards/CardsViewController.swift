@@ -22,6 +22,8 @@ fileprivate struct Constants {
     static let fontSize22: CGFloat = 22
     static let numberOfLines = 0
     static let registerCell = "CardCell"
+    
+    private init() {}
 }
 
 protocol CardsDisplayLogic: class {
@@ -30,9 +32,9 @@ protocol CardsDisplayLogic: class {
 }
 
 class CardsViewController: UIViewController, CardsDisplayLogic {
-    var interactor: CardsBusinessLogic?
+    private var interactor: CardsBusinessLogic?
     var router: (NSObjectProtocol & CardsRoutingLogic & CardsDataPassing)?
-    var pathCards: [String] = []
+    private var pathCards: [String] = []
     
     private lazy var backButton: UIButton = {
         return UIButton(type: .custom)
@@ -46,11 +48,11 @@ class CardsViewController: UIViewController, CardsDisplayLogic {
         return CardFlowLayout()
     }()
     
-    lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         return UICollectionView(frame: .zero, collectionViewLayout: cardFlowLayout)
     }()
     
-    lazy var spinner: UIActivityIndicatorView = {
+    private lazy var spinner: UIActivityIndicatorView = {
         return UIActivityIndicatorView(style: .whiteLarge)
     }()
     
